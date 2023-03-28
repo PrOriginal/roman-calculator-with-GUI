@@ -199,7 +199,7 @@ class Calculator:
         self.root.bind("<Delete>", lambda e: self.clear())
         digits_binds = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5,
                      "VI": 6, "VII": 7, "VII": 8, "IX": 9, "X": 10}
-        for key in num_binds:
+        for key in digits_binds:
             self.root.bind(
                 digits_binds[key], lambda e, operator=key: self.add_to_expression(operator))
         for key in self.nums_dictionary:
