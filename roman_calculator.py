@@ -13,7 +13,7 @@ class Calculator:
         self.root.geometry("360x540")
         self.root.resizable(True, False)
         self.root.title("Be like a Roman!")
-        # self.root.iconbitmap("icon.ico")
+        #self.root.iconbitmap("icon.ico")
         self.total_arabic_expression = ""
         self.total_roman_expression = ""
         self.current_expression = ""
