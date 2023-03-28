@@ -55,7 +55,6 @@ class Calculator:
         current_label = tk.Label(self.display_frame, text="Nullus", anchor=tk.E,
                                  bg="white", fg="black", padx=24, font=LARGE_FONT_STYLE)
         current_label.pack(expand=True, fill="both")
-
         return total_arabic_label, total_roman_label, current_label
 
     def create_buttons_frame(self):
@@ -79,7 +78,6 @@ class Calculator:
         roman_nums = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X", 20: "XX", 30: "XXX", 40: "XL", 50: "L", 60: "LX",
                       70: "LXX", 80: "LXXX", 90: "XC", 100: "C", 200: "CC", 300: "CCC", 400: "CD", 500: "D", 600: "DC", 700: "DCC", 800: "DCCC", 900: "CM", 1000: "M"
                       }
-
         arabic_num = int(round(result, 0))
         if arabic_num == 0:
             self.total_roman_expression += " = Nullus"
@@ -199,12 +197,11 @@ class Calculator:
         self.root.bind("<Return>", lambda e: self.evaluate())
         self.root.bind("<BackSpace>", lambda e: self.backspace())
         self.root.bind("<Delete>", lambda e: self.clear())
-
-        num_binds = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5,
+        digits_binds = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5,
                      "VI": 6, "VII": 7, "VII": 8, "IX": 9, "X": 10}
         for key in num_binds:
             self.root.bind(
-                num_binds[key], lambda e, operator=key: self.add_to_expression(operator))
+                digits_binds[key], lambda e, operator=key: self.add_to_expression(operator))
         for key in self.nums_dictionary:
             self.root.bind(key.lower(), lambda e,
                            digit=key: self.add_to_expression(digit))
